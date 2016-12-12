@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <header
+        android:fragment="com.pp.mo.filemanager.prefrences.FragmentGeneralPreference"
+        android:title="@string/pref_header_general" />
+    <header
+        android:fragment="com.pp.mo.filemanager.prefrences.FragmentThemePreference"
+        android:title="@string/pref_header_theme" />
+    <header
+        android:fragment="com.pp.mo.filemanager.prefrences.FragmentSecurityPreference"
+        android:title="@string/pref_header_security" />
+    <header
+        android:fragment="com.pp.mo.filemanager.prefrences.FragmentAdvancedPreference"
+        android:title="@string/pref_header_advanced" />
+
+</preference-headers>
