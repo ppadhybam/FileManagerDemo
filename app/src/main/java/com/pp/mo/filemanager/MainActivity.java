@@ -15,7 +15,7 @@ import android.view.MenuItem;
 
 import com.pp.mo.filemanager.prefrences.PreferencesActivity;
 
-public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends FileManagerActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     @Override

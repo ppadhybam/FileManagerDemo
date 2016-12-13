@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.AppCompatDrawableManager;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -31,6 +33,7 @@ import com.pp.mo.filemanager.utils.Utils;
  * A preference that allows the user to choose an application or shortcut.
  */
 public class ColorPreference extends Preference {
+    private static Context mContext;
     private int[] mColorChoices = {};
     private int mValue = 0;
     private int mItemLayoutId = R.layout.grid_item_color;
@@ -39,16 +42,19 @@ public class ColorPreference extends Preference {
 
     public ColorPreference(Context context) {
         super(context);
+        mContext = context;
         initAttrs(null, 0);
     }
 
     public ColorPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mContext = context;
         initAttrs(attrs, 0);
     }
 
     public ColorPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        mContext = context;
         initAttrs(attrs, defStyle);
     }
 
@@ -263,8 +269,9 @@ public class ColorPreference extends Preference {
             Drawable drawable = colorChoiceDrawable;
             if (selected) {
 
-                VectorDrawableCompat checkmark = VectorDrawableCompat.create(view.getResources(),
-                        R.drawable.checkmark_white, null);
+                /*VectorDrawableCompat checkmark = VectorDrawableCompat.create(view.getResources(),
+                        R.drawable.checkmark_white, null);*/
+                Drawable checkmark = AppCompatDrawableManager.get().getDrawable(mContext,android.R.drawable.checkbox_on_background);
                 InsetDrawable checkmarkInset = new InsetDrawable(checkmark, Utils.dpToPx(view.getContext(), 5));
                 drawable = new LayerDrawable(new Drawable[]{
                         colorChoiceDrawable,
