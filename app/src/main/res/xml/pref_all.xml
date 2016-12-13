@@ -1,0 +1,49 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Theme Settings">
+        <com.pp.mo.filemanager.views.ColorPreference
+            android:defaultValue="@color/colorPrimary"
+            android:dialogTitle="Theme Color"
+            android:key="actionBarColor"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:summary="The color of theme"
+            android:title="Theme Color"
+            app:itemLayout="@layout/pref_layout_color"
+            app:numColumns="5" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/theme_style_names"
+            android:entryValues="@array/theme_style_values"
+            android:key="themeStyle"
+            android:persistent="true"
+            android:summary="%s"
+            android:title="Theme" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Security">
+        <CheckBoxPreference
+            android:key="pin_enable"
+            android:summary="Gives security to your files"
+            android:title="Enable PIN Protection" />
+
+        <Preference
+            android:dependency="pin_enable"
+            android:key="pin_set"
+            android:summary="PIN protection disabled"
+            android:title="Set PIN" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="About">
+        <Preference
+            android:key="app_version"
+            android:summary="Version 1.0.0"
+            android:title="App Version:" />
+        <Preference
+            android:key="app_about"
+            android:title="AboutApp" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

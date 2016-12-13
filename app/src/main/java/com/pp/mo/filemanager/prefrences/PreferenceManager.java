@@ -14,7 +14,15 @@ import com.pp.mo.filemanager.R;
 
 public class PreferenceManager {
 
+    @SuppressWarnings("WrongConstant")
     public static void changeThemeStyle(AppCompatDelegate delegate) {
+        int nightMode = Integer.valueOf(getThemeStyle());
+        AppCompatDelegate.setDefaultNightMode(nightMode);
+        delegate.setLocalNightMode(nightMode);
+    }
+
+    @SuppressWarnings("WrongConstant")
+    public static void changeThemeStyleBase(AppCompatDelegate delegate) {
         int nightMode = Integer.valueOf(getThemeStyle());
         AppCompatDelegate.setDefaultNightMode(nightMode);
         delegate.setLocalNightMode(nightMode);

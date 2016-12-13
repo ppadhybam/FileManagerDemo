@@ -23,16 +23,15 @@ import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.pp.mo.filemanager.R;
-
+import com.pp.mo.filemanager.utils.Utils;
 
 
 /**
  * A preference that allows the user to choose an application or shortcut.
  */
-public class ColorPreference /*extends Preference*/ {
-    /*private int[] mColorChoices = {};
+public class ColorPreference extends Preference {
+    private int[] mColorChoices = {};
     private int mValue = 0;
     private int mItemLayoutId = R.layout.grid_item_color;
     private int mNumColumns = 5;
@@ -54,7 +53,8 @@ public class ColorPreference /*extends Preference*/ {
     }
 
     private void initAttrs(AttributeSet attrs, int defStyle) {
-        TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ColorPreference, defStyle, defStyle);
+        TypedArray a = getContext().getTheme().obtainStyledAttributes(
+                attrs, R.styleable.ColorPreference, defStyle, defStyle);
 
         try {
             mItemLayoutId = a.getResourceId(R.styleable.ColorPreference_itemLayout, mItemLayoutId);
@@ -263,9 +263,12 @@ public class ColorPreference /*extends Preference*/ {
             Drawable drawable = colorChoiceDrawable;
             if (selected) {
 
-                VectorDrawableCompat checkmark = VectorDrawableCompat.create(view.getResources(), R.drawable.checkmark_white, null);
+                VectorDrawableCompat checkmark = VectorDrawableCompat.create(view.getResources(),
+                        R.drawable.checkmark_white, null);
                 InsetDrawable checkmarkInset = new InsetDrawable(checkmark, Utils.dpToPx(view.getContext(), 5));
-                drawable = new LayerDrawable(new Drawable[]{colorChoiceDrawable, checkmarkInset});
+                drawable = new LayerDrawable(new Drawable[]{
+                        colorChoiceDrawable,
+                        checkmarkInset});
             }
 
             imageView.setImageDrawable(drawable);
@@ -273,5 +276,5 @@ public class ColorPreference /*extends Preference*/ {
         } else if (view instanceof TextView) {
             ((TextView) view).setTextColor(color);
         }
-    }*/
+    }
 }
